@@ -1,5 +1,6 @@
 <?php namespace App\Routing;
 
+use App\Call;
 use App\HTTP\Request;
 
 //Load routes
@@ -17,9 +18,9 @@ class Router{
         return self::$routes[$method];
     }
 
-    public static function find(Request $request){
-        return isset(self::$routes[$request->getMethod()][$request->getPath()]) ?
-        self::$routes[$request->getMethod()][$request->getPath()] : null;
+    public static function makeCall(Request $request){
+        return new Call(isset(self::$routes[$request->getMethod()][$request->getPath()]) ?
+        self::$routes[$request->getMethod()][$request->getPath()] : null, $request);
        
     }
 
