@@ -37,10 +37,28 @@ h4 {
     
     padding: 20px;
     margin: 50px auto;
+    display: flex;
 }
 
 .left{
     width: 500px;
     background-color: #fff;
     padding: 20px;
+}
+
+.right{
+    width: 300px;
+    padding: 20px 30px;
+    background-color: #333;
+    color: rgb(211, 186, 28)
+}
+
+.wrapper ul{
+    margin: 0;
+    padding: 0 10px;
+}
+
+.wrapper ul li{
+    margin-bottom: 5px;
+    font-size: 0.8em;
 }
