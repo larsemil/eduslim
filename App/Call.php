@@ -1,16 +1,18 @@
 <?php
+
 namespace App;
 
 use App\HTTP\Request;
 
-class Call{
+class Call
+{
 
     protected $callable;
     protected $request;
 
     public function __construct($callable, Request $request)
     {
-        if(!$callable){
+        if (!$callable) {
             throw new \Exception("Callable is null. ");
         }
         $this->callable = $callable;
@@ -18,21 +20,17 @@ class Call{
     }
 
 
-    public function execute(){
-        $call = $this->callable; 
+    public function execute()
+    {
+        $call = $this->callable;
         //Echo the output from route closure/callback
         if ($call instanceof \Closure) {
             echo $call($this->request);
         } elseif (is_array($call)) {
-            try{
-                echo call_user_func($call, $this->request);
-            } catch( \Exception $e) {
-                echo "Could not execute method";
-                dd($call);
-            }
+
+            echo call_user_func($call, $this->request);
         } else {
             echo $call;
         }
     }
-
 }
