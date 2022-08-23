@@ -62,3 +62,18 @@ h4 {
     margin-bottom: 5px;
     font-size: 0.8em;
 }
+
+.big{
+    padding: 30px;
+    width: 80%;
+    margin-right: 20px;
+}
+
+.dark{
+    background-color: rgb(211, 186, 28);
+    color: #333;
+}
+
+pre{
+    font-size: 12px !important;
+}
