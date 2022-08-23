@@ -2,7 +2,7 @@
     "name": "larsemil/eduslim",
     "description": "Simple PHP Framework for Educational purposes",
     "type": "project",
-    "license": "GPLv3",
+    "license": "GPL-3.0-only",
     "authors": [
         {
             "name": "Emil Österlund",
