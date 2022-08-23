@@ -19,9 +19,15 @@ class Router{
     }
 
     public static function makeCall(Request $request){
-        return new Call(isset(self::$routes[$request->getMethod()][$request->getPath()]) ?
-        self::$routes[$request->getMethod()][$request->getPath()] : null, $request);
-       
+        $route = isset(self::$routes[$request->getMethod()][$request->getPath()]) ?
+        self::$routes[$request->getMethod()][$request->getPath()] : null;;
+
+        if(!$route){
+            routeNotFound();
+            return;
+        }
+
+        return new Call($route, $request);
     }
 
     

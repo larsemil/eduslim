@@ -2,6 +2,45 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     background-color: #eaeaea;
+    Font-Family: 'Cabin', Sans-Serif;
+    Font-Size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    Font-Family: 'Roboto Condensed', Sans-Serif;
+
+}
+
+h1 {
+    Font-Size: 35px;
+}
+
+h2 {
+    Font-Size: 26px;
+}
+
+h3 {
+    Font-Size: 20px;
+}
+
+h4 {
+    Font-Size: 18px;
+}
+
+.wrapper{
+    width: 800px;
+    
+    padding: 20px;
+    margin: 50px auto;
+}
+
+.left{
+    width: 500px;
+    background-color: #fff;
+    padding: 20px;
 }

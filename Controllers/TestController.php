@@ -5,8 +5,7 @@ use App\HTTP\Request;
 
 class TestController{
     public static function show(Request $request){
-        
-        return blade('test', ['thing' => 'hatt']);
+        return blade('hello');
         
     }
 }

@@ -11,3 +11,9 @@ function blade($name, $data = [])
         die("Could not load view: " . $name);
     }
 }
+
+function routeNotFound(){
+    //@todo fix better 404 handling;
+    die("Page not found");
+
+}
