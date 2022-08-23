@@ -4,12 +4,23 @@ namespace App;
 
 use App\HTTP\Request;
 
+/**
+ * Call
+ * Class to handle the call to the route content
+ */
 class Call
 {
 
     protected $callable;
     protected $request;
-
+    
+    /**
+     * __construct
+     *
+     * @param  mixed $callable
+     * @param  Request $request
+     * @return void
+     */
     public function __construct($callable, Request $request)
     {
         if (!$callable) {
@@ -19,7 +30,12 @@ class Call
         $this->request = $request;
     }
 
-
+    
+    /**
+     * execute
+     *
+     * @return void
+     */
     public function execute()
     {
         $call = $this->callable;

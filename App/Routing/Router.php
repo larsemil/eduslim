@@ -6,18 +6,42 @@ use App\HTTP\Request;
 //Load routes
 require_once('../Routes.php');
 
+/**
+ * Router
+ * Router class for handling of routes
+ */
 class Router{
 
     private static $routes = [];
-
+    
+    /**
+     * addRoute
+     *
+     * @param  mixed $method
+     * @param  mixed $path
+     * @param  mixed $resolver
+     * @return void
+     */
     public static function addRoute(string $method, string $path, $resolver){
         self::$routes[$method][$path] = $resolver;
     }
-
+    
+    /**
+     * getRoutes
+     *
+     * @param  mixed $method
+     * @return array
+     */
     public static function getRoutes(string $method = 'GET'){
         return self::$routes[$method];
     }
-
+    
+    /**
+     * makeCall
+     *
+     * @param  mixed $request
+     * @return Call
+     */
     public static function makeCall(Request $request){
         $route = isset(self::$routes[$request->getMethod()][$request->getPath()]) ?
         self::$routes[$request->getMethod()][$request->getPath()] : null;;

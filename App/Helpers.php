@@ -2,6 +2,13 @@
 
 use App\App;
 
+/**
+ * blade helper function
+ *
+ * @param  mixed $name
+ * @param  mixed $data
+ * @return string
+ */
 function blade($name, $data = [])
 {
     
@@ -12,6 +19,11 @@ function blade($name, $data = [])
     }
 }
 
+/**
+ * routeNotFound
+ *
+ * @return void
+ */
 function routeNotFound(){
     //@todo fix better 404 handling;
     die("Page not found");

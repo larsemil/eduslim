@@ -5,10 +5,19 @@ namespace App;
 use Jenssegers\Blade\Blade;
 
 
+/**
+ * App
+ * Main application class.
+ */
 class App
 {
     public static $blade;
-
+    
+    /**
+     * boot
+     *
+     * @return void
+     */
     public static function boot()
     {
 
