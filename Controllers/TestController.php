@@ -8,4 +8,18 @@ class TestController{
         return blade('hello');
         
     }
+
+    public static function test(Request $request){
+
+        
+        return blade('form');
+
+    }
+
+    public static function store(Request $request){
+
+        dd($request);
+
+        return "Tack för din data. ";
+    }
 }
