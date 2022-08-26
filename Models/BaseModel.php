@@ -1,4 +1,5 @@
 <?php
+namespace Models;
 use Illuminate\Database\Eloquent\Model as Eloquent;
 
 
@@ -7,6 +8,6 @@ use Illuminate\Database\Eloquent\Model as Eloquent;
  * Base Model to use Eloquent.
  * Extend this Class to use your Eloquent with your Models.
  */
-class Model extends Eloquent{
+class BaseModel extends Eloquent{
     
 }
