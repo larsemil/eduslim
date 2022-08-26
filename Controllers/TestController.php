@@ -2,6 +2,8 @@
 namespace Controllers;
 
 use App\HTTP\Request;
+use Models\User;
+
 
 class TestController{
     public static function show(Request $request){
@@ -9,6 +11,8 @@ class TestController{
     }
 
     public static function test(Request $request){
+        dd(User::all());
+        
         return blade('form');
     }
 

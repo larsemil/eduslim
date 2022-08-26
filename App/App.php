@@ -2,7 +2,8 @@
 
 namespace App;
 
-use Jenssegers\Blade\Blade;
+use RyanChandler\Blade\Blade;
+use Illuminate\Database\Capsule\Manager as Capsule;
 
 
 /**
@@ -34,6 +35,28 @@ class App
             die("Could not find .env file. Please create it in root.");
         }
 
+
+        //initialize Eloquent
+        if(isset($_ENV['ENABLE_DB']) && $_ENV['ENABLE_DB'] ){
+            $capsule = new Capsule;
+            $capsule->addConnection([
+                'driver'   => $_ENV['DB_DRIVER'],
+                'host'     => $_ENV['DB_HOST'],
+                'database' => $_ENV['DB_DATABASE'],
+                'username' => $_ENV['DB_USERNAME'],
+                'password' => $_ENV['DB_PASSWORD'],
+                'charset'   => 'utf8',
+                'collation' => 'utf8_unicode_ci',
+                'prefix'   => $_ENV['DB_PREFIX'],
+                ]);
+
+                $capsule->setAsGlobal();
+
+                $capsule->bootEloquent();
+
+        }
+        
+        
 
         //initialize blade
         self::$blade = new Blade('../Views', '../cache');
