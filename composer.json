@@ -12,8 +12,9 @@
     "require": {
         "larapack/dd": "^1.1",
         "vlucas/phpdotenv": "^5.4",
-        "jenssegers/blade": "^1.4",
-        "filp/whoops": "^2.14"
+        "filp/whoops": "^2.14",
+        "ryangjchandler/standalone-blade": "^0.1.0",
+        "illuminate/database": "^9.26"
     },
     "autoload": {
         "files": ["App/Helpers.php"],
