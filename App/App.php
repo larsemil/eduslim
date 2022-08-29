@@ -36,8 +36,8 @@ class App
         }
 
 
-        //initialize Eloquent
-        if(isset($_ENV['ENABLE_DB']) && $_ENV['ENABLE_DB'] ){
+	//initialize Eloquent
+        if(isset($_ENV['ENABLE_DB']) && $_ENV['ENABLE_DB'] == "true" ){
             $capsule = new Capsule;
             $capsule->addConnection([
                 'driver'   => $_ENV['DB_DRIVER'],
