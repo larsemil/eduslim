@@ -29,3 +29,19 @@ function routeNotFound(){
     die("Page not found");
 
 }
+
+/**
+ * redirect
+ * Redirects to chosen url
+ *
+ * @param  mixed $url
+ * @return void
+ */
+function redirect($url)
+{
+    if (strpos($url, 'http') !== false) {
+        header('location: '.$url);
+    } else {
+        header('location: ' . $_ENV['BASE_URL'] . $url);
+    }
+}
