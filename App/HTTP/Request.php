@@ -17,7 +17,8 @@ class Request{
         // Get full URL
         $url ="//{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
         $this->url = htmlspecialchars( $url, ENT_QUOTES, 'UTF-8' );
-
+        $this->url = explode('?',$this->url)[0];
+        
         // Get protocol
         $this->protocol = Protocol::get();
 
