@@ -42,6 +42,31 @@ function redirect($url)
     if (strpos($url, 'http') !== false) {
         header('location: '.$url);
     } else {
-        header('location: ' . $_ENV['BASE_URL'] . $url);
+        header('location: ' .url($url));
     }
+}
+
+/**
+ * url
+ * Generate an internal url using base URL
+ * If url contains http or https only return url
+ * @param  mixed $url
+ * @return string
+ */
+function url($url){
+    if (strpos($url, 'http') !== false) {
+        return $url;
+    }
+    return $_ENV['BASE_URL'] . $url;
+}
+
+
+/**
+ * now
+ * returns current timestamp as year-month-day hour:minute:seconds
+ *
+ * @return void
+ */
+function now(){
+    return date("Y-m-d H:i:s");
 }
