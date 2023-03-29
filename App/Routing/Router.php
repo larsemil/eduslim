@@ -27,6 +27,32 @@ class Router{
     }
     
     /**
+     * get
+     * Shorthand method for addRoute for GET request
+     *
+     * @param  mixed $path
+     * @param  mixed $resolver
+     * @return void
+     */
+    public static function get(string $path, $resolver){
+        self::addRoute('GET', $path, $resolver);
+    }
+
+    /**
+     * post
+     * Shorthand method for addRoute for POST request
+     *
+     * @param  mixed $path
+     * @param  mixed $resolver
+     * @return void
+     */
+    public static function post(string $path, $resolver){
+        self::addRoute('POST', $path, $resolver);
+    }
+
+    
+    
+    /**
      * getRoutes
      *
      * @param  mixed $method

@@ -5,6 +5,7 @@ use Jenssegers\Blade\Blade;
 use App\Routing\Router;
 use App\HTTP\Request;
 
+session_start();
 
 //boot things up.
 App\App::boot();

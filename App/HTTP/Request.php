@@ -23,13 +23,18 @@ class Request{
         $this->protocol = Protocol::get();
 
         $this->base_url = substr(str_replace($this->protocol, '', $_ENV['BASE_URL']),1);
-        $this->path = str_replace($this->base_url,'', $this->url);
+        $this->path = $this->checkPath();
 
         $this->method = $_SERVER['REQUEST_METHOD'];
 
         $this->headers = getallheaders();
 
         return $this;
+    }
+
+    public function checkPath(){
+        //@todo: fix placeholder urls (eg. /pages/{title})
+        return str_replace($this->base_url,'', $this->url);
     }
 
     public function getUrl(){
