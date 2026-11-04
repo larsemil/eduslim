@@ -22,6 +22,10 @@ class App
     public static function boot()
     {
 
+        //Don't let harmless notices/deprecations (e.g. tempnam() falling back
+        //to the system temp dir) get escalated into fatal Whoops pages.
+        error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED);
+
         //Whoops error handler
         $whoops = new \Whoops\Run;
         $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
