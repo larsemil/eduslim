@@ -1,7 +1,5 @@
 <?php
 namespace App\HTTP;
-use Scheme;
-
 
 class Request{
     protected $url = '';

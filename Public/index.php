@@ -1,7 +1,6 @@
 <?php
 require_once('../vendor/autoload.php');
 
-use Jenssegers\Blade\Blade;
 use App\Routing\Router;
 use App\HTTP\Request;
 

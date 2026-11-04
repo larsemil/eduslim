@@ -2,7 +2,7 @@
 
 namespace App;
 
-use RyanChandler\Blade\Blade;
+use App\View\Blade;
 use Illuminate\Database\Capsule\Manager as Capsule;
 
 
