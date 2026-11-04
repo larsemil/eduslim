@@ -24,8 +24,12 @@ class Blade
     {
         $filesystem = new Filesystem;
 
-        if (!is_dir($cachePath)) {
-            $filesystem->makeDirectory($cachePath, 0755, true);
+        if (!is_dir($cachePath) && !$filesystem->makeDirectory($cachePath, 0755, true) && !is_dir($cachePath)) {
+            throw new \RuntimeException("Could not create Blade cache directory: {$cachePath}. Create it manually and make sure the web server user can write to it.");
+        }
+
+        if (!is_writable($cachePath)) {
+            throw new \RuntimeException("Blade cache directory is not writable: {$cachePath}. Fix its permissions (e.g. chmod 775).");
         }
 
         $resolver = new EngineResolver;
