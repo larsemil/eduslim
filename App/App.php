@@ -59,6 +59,6 @@ class App
         
 
         //initialize blade
-        self::$blade = new Blade('../Views', '../cache');
+        self::$blade = new Blade(__DIR__ . '/../Views', __DIR__ . '/../cache');
     }
 }
