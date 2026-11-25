@@ -9,6 +9,7 @@ class Request{
     protected $method = '';
 
     protected $headers = [];
+    protected $params = [];
     public function __construct()
     {
 
@@ -57,5 +58,37 @@ class Request{
 
     public function getMethod(){
         return $this->method;
+    }
+
+    /**
+     * setParams
+     * Sets the params matched from a dynamic route (eg. /movies/{id})
+     *
+     * @param  array $params
+     * @return void
+     */
+    public function setParams(array $params){
+        $this->params = $params;
+    }
+
+    /**
+     * getParam
+     * Get a single param matched from a dynamic route, or $default if not set
+     *
+     * @param  string $key
+     * @param  mixed $default
+     * @return mixed
+     */
+    public function getParam(string $key, $default = null){
+        return $this->params[$key] ?? $default;
+    }
+
+    /**
+     * getParams
+     *
+     * @return array
+     */
+    public function getParams(){
+        return $this->params;
     }
 }
